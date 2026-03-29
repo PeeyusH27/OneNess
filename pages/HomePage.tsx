@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="pt-20 bg-white dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative overflow-hidden min-h-screen md:min-h-[90vh] flex items-center bg-white dark:bg-slate-900">
+      <section className="relative min-h-screen md:min-h-[90vh] flex items-center bg-white dark:bg-slate-900">
         <div className="absolute top-0 right-0 w-0 md:w-1/2 h-full bg-red-600/5 dark:bg-red-500/10 -skew-x-12 transform translate-x-0 md:translate-x-20 z-0"></div>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
           <div className="w-full md:w-3/5 text-center md:text-left">

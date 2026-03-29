@@ -284,7 +284,7 @@ const GameDetailPage: React.FC = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="py-20 sm:py-24 md:py-32 bg-white dark:bg-slate-800 overflow-hidden transition-colors duration-300">
+      <section className="py-20 sm:py-24 md:py-32 bg-white dark:bg-slate-800 transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <div className="animate-in fade-in slide-in-from-left-8 duration-700">
             <h2 className="text-xs sm:text-sm font-black text-red-600 uppercase tracking-[0.4em] mb-4 sm:mb-6">Introduction</h2>

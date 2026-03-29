@@ -5,7 +5,7 @@ const AboutPage: React.FC = () => {
   return (
     <div className="pt-20 bg-white dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
       {/* Hero Narrative */}
-      <section className="py-20 sm:py-24 lg:py-28 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300">
+      <section className="py-20 sm:py-24 lg:py-28 bg-white dark:bg-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-red-600 font-black tracking-[0.4em] uppercase text-xs sm:text-sm mb-4">Our Genesis</h2>
