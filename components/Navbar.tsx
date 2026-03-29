@@ -21,13 +21,13 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed max-w-[100vw] top-0 left-0 right-0 w-full overflow-x-hidden z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/95 dark:bg-slate-900/95 shadow-md py-2"
           : "bg-white/80 dark:bg-slate-900/80 py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div className="w-full max-w-7xl mx-auto px-4 flex items-center justify-between">
         
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -98,8 +98,8 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-900 border-t shadow-lg">
-          <div className="flex flex-col px-6 py-4 space-y-3">
+        <div className="w-full md:hidden bg-white dark:bg-slate-900 border-t shadow-lg overflow-x-hidden">
+          <div className="flex flex-col w-full px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <Link
                 key={item}

@@ -1,13 +1,31 @@
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FEATURED_GAME } from '../constants';
 
 const HomePage: React.FC = () => {
+  const featuredImageRef = useRef<HTMLDivElement | null>(null);
+  const [featuredInView, setFeaturedInView] = useState(false);
+
+  useEffect(() => {
+    if (!featuredImageRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setFeaturedInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 }
+    );
+    observer.observe(featuredImageRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="pt-20 bg-white dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
       {/* Hero Section */}
-      <section className="relative min-h-screen md:min-h-[90vh] flex items-center bg-white dark:bg-slate-900">
+      <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-slate-900">
         <div className="absolute top-0 right-0 w-0 md:w-1/2 h-full bg-red-600/5 dark:bg-red-500/10 -skew-x-12 transform translate-x-0 md:translate-x-20 z-0"></div>
         <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
           <div className="w-full md:w-3/5 text-center md:text-left">
@@ -21,13 +39,13 @@ const HomePage: React.FC = () => {
             </p>
             <Link 
               to="/games"
-              className="inline-block px-8 sm:px-10 py-4 sm:py-5 bg-red-600 text-white font-black text-base sm:text-lg tracking-widest uppercase rounded-xl shadow-[0_10px_30px_rgba(239,68,68,0.3)] hover:bg-red-700 hover:-translate-y-1 transition-all"
+              className="inline-block w-full md:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-red-600 text-white font-black text-base sm:text-lg tracking-widest uppercase rounded-xl shadow-[0_10px_30px_rgba(239,68,68,0.3)] hover:bg-red-700 hover:-translate-y-1 transition-all text-center"
             >
               Explore Games
             </Link>
           </div>
           <div className="w-full md:w-2/5 mt-8 md:mt-0 relative">
-             <div className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-full aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-500">
+             <div className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-full aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform md:rotate-3 hover:md:rotate-0 transition-transform duration-500">
                 <img 
                   src="https://picsum.photos/seed/herogame/800/1000" 
                   alt="Hero Game" 
@@ -53,7 +71,10 @@ const HomePage: React.FC = () => {
           >
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-2/5 p-12">
-                <div className="relative group-hover:scale-105 transition-transform duration-700">
+                <div
+                  ref={featuredImageRef}
+                  className={`relative transition-transform duration-700 ${featuredInView ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 translate-y-8'}`}
+                >
                   <img 
                     src={FEATURED_GAME.cardImage} 
                     alt={FEATURED_GAME.title}

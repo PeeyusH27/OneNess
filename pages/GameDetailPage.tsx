@@ -296,7 +296,7 @@ const GameDetailPage: React.FC = () => {
               {game.description} Embark on a journey that defines the future of tabletop gaming. This isn't just a game; it's a cinematic experience brought to life through elegant mechanics and stunning art.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 sm:px-10 py-4 sm:py-5 bg-red-600 text-white font-black tracking-widest uppercase rounded-full shadow-2xl hover:bg-red-700 hover:-translate-y-1 transition-all">
+              <button className="w-full md:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-red-600 text-white font-black tracking-widest uppercase rounded-full shadow-2xl hover:bg-red-700 hover:-translate-y-1 transition-all">
                 Order Your Box
               </button>
               <Link to="/games" className="px-8 sm:px-10 py-4 sm:py-5 border-2 border-gray-100 text-gray-900 font-black tracking-widest uppercase rounded-full hover:border-red-600 hover:text-red-600 transition-all text-center">
@@ -348,7 +348,7 @@ const GameDetailPage: React.FC = () => {
           <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-3xl mx-auto font-medium opacity-90 leading-relaxed">
             The ritual has begun. The clans are gathering. Will you be the one to reach the 5th stage of the Game Tracker?
           </p>
-          <button className="bg-white text-red-600 px-8 sm:px-12 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl tracking-widest uppercase shadow-2xl hover:scale-105 transition-all">
+          <button className="w-full md:w-auto bg-white text-red-600 px-8 sm:px-12 py-4 sm:py-5 rounded-full font-black text-base sm:text-xl tracking-widest uppercase shadow-2xl hover:scale-105 transition-all">
             Secure Your Destiny
           </button>
         </div>

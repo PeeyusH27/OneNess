@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
       {/* Hero Narrative */}
       <section className="py-20 sm:py-24 lg:py-28 bg-white dark:bg-slate-900 transition-colors duration-300">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center md:text-left">
             <h2 className="text-red-600 font-black tracking-[0.4em] uppercase text-xs sm:text-sm mb-4">Our Genesis</h2>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 dark:text-gray-100 tracking-tighter leading-tight md:leading-none mb-8 md:mb-12">
               ONE VISION. <br />
@@ -50,7 +50,7 @@ const AboutPage: React.FC = () => {
                alt="Design Studio"
              />
           </div>
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 text-center md:text-left">
             <h2 className="text-4xl font-black mb-8 tracking-tighter">WHERE LEGENDS ARE DRAWN.</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
               In our studio, silence is often broken by the clacking of dice and the spirited debates of designers refining a single mechanic for months. 
